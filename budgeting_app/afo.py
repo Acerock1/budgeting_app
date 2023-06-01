@@ -20,6 +20,17 @@ page_icon = "💵"
 years = [date.today().year, date.today().year - 1, date.today().year - 2]
 months = list(calendar.month_name[1:])
 
+#page layout--- title, and option menu for data entry and data visualization
+st.title(page_title +" "+ page_icon)
+
+selected = option_menu(
+    menu_title=None,
+    options= ["Data Entry", "Data Visualiztion"],
+    icons=("📝", "📊"),
+    orientation= "horizontal"
+)
+
+
 
 # Database interface
 def get_all_periods():
