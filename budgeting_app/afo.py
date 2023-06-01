@@ -36,7 +36,7 @@ selected = option_menu(
 # db interface
 def get_all_periods():
     items = db.fetch_all_periods()
-    periods = [item["key"] for item in items]
+    periods = [item["period"] for item in items]
     return periods
 
 
