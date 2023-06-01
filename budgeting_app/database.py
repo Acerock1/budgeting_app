@@ -19,8 +19,8 @@ def insert_period(period, income, expenses, comment):
     )
     return response
 
-period = "jun_2021"
-income = 6000
+period = "jun_2020"
+income = 6070
 expenses = 4500
 comment = "null"
 insert_period(period, income, expenses, comment)
