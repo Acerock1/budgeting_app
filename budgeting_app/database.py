@@ -38,7 +38,7 @@ def get_period(period):
     item = response['Item']
     return item
 
-period = "jun_2022"
+period = "jun_2021"
 income = 6000
 expenses = 4500
 comment = "null"
