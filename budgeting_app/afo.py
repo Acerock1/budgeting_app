@@ -17,13 +17,19 @@ years = [date.today().year, date.today().year-1, date.today().year-2]
 months = list(calendar.month_name[1:])
 
 #page configuration
-st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout)
-st.title(page_title + " " + page_icon)
+st.set_page_config(
+    page_title= "budegting_app",
+    page_icon="💵",
+    layout= "centered"
+)
+st.title(
+    page_title + " " + page_icon
+    )
 
 selected = option_menu(
     menu_title=None,
     options=["Data Entry", "Data Visualization"],
-    icons=["pencil-fill", "bar-chart-fill"],  # https://icons.getbootstrap.com/
+    icons=["📝", "📊"],
     orientation="horizontal",
 )
 
@@ -75,7 +81,7 @@ if selected == "Data Entry":
             st.success("Data saved!")
 
 
-# --- PLOT PERIODS ---
+# data visualization and plotting sankey chart
 if selected == "Data Visualization":
     st.header("Data Visualization")
     with st.form("saved_periods"):
