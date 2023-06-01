@@ -38,5 +38,9 @@ def get_period(period):
     item = response['Item']
     return item
 
+period = "jun_2022"
+income = 6000
+expenses = 4500
+comment = "null"
 
-insert_period(period = {"S","jun_2022"}, income = {"N", 6000}, expenses = {"N", 4500}, comment = {"S", "null"})
+insert_period(period, income, expenses, comment)

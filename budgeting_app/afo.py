@@ -72,6 +72,7 @@ if selected == "Data Entry":
             comment = st.text_area("", placeholder="Enter a comment here ...")
 
         "---"
+        #submitting data to dynamodb
         submitted = st.form_submit_button("Save Data")
         if submitted:
             period = str(st.session_state["year"]) + "_" + str(st.session_state["month"])
