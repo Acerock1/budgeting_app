@@ -12,7 +12,7 @@ def insert_period(period, income, expenses, comment):
         TableName=TableName,
         Item={
             'period': {'S': period},
-            'income': {'N': income},
+            'incomes': {'N': income},
             'expenses': {'N': expenses},
             'comment': {'S': comment}
         }
@@ -46,4 +46,4 @@ income = 6000
 expenses = 4500
 comment = "null"
 
-insert_period(period, income, expenses, comment)
+insert_period(period = period, income= incomes, expenses = expenses, comment= comment)
