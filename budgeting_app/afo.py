@@ -6,6 +6,12 @@ from datetime import date
 import calendar
 import database as db
 
+st.set_page_config(
+    page_title= "budegting_app",
+    page_icon="💵",
+    layout= "centered"
+)
+
 "_ _ _"
 incomes = ["Salary", "Blog", "Other Income"]
 expenses = ["Rent", "Utilities", "Car", "Savings", "Other Expenses"]
@@ -16,11 +22,6 @@ years = [date.today().year, date.today().year-1, date.today().year-2]
 months = list(calendar.month_name[1:])
 "_ _ _"
 
-st.set_page_config(
-    page_title= "budegting_app",
-    page_icon="💵",
-    layout= "centered"
-)
 
 #database interface
 def get_all_periods():
