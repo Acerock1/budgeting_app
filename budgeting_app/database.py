@@ -9,7 +9,7 @@ TableName = "budgeting_app_db"
 
 def insert_period(period, income, expenses, comment):
     response = dynamodb.put_item(
-        TableName=table_name,
+        TableName=TableName,
         Item={
             'period': {'S': str(period)},
             'income': {'N': str(income)},
