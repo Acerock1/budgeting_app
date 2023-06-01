@@ -9,16 +9,17 @@ TableName = "budgeting_app_db"
 
 def insert_period(period, income, expenses, comment):
     response = dynamodb.put_item(
-        TableName=TableName,
+        TableName=table_name,
         Item={
             'period': {'S': period},
-            'income': {'N': income},
-            'expenses': {'N': expenses},
+            'income': {'N': str(income)},
+            'expenses': {'N': str(expenses)},
             'comment': {'S': comment}
         }
     )
     return response
 
+insert_period(period, income, expenses, comment)
 
 
 #fetchdata from table
@@ -46,4 +47,3 @@ income = 6000
 expenses = 4500
 comment = "null"
 
-insert_period(period = period, income= income, expenses = expenses, comment= comment)
