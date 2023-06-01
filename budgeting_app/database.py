@@ -7,7 +7,7 @@ TableName = "budgeting_app_db"
 
 
 #write to table
-def insert_period(period, incomes, expenses, comment):
+def insert_period(period, income, expenses, comment):
     dynamodb.put_item(
         TableName = TableName,
         Item={
@@ -39,4 +39,4 @@ def get_period(period):
     return item
 
 
-insert_period(period = "jun_2022", incomes = 6000, expenses = 4500, comment = "null")
+insert_period(period = "jun_2022", income = 6000, expenses = 4500, comment = "null")
