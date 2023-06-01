@@ -19,6 +19,10 @@ def insert_period(period, income, expenses, comment):
     )
     return response
 
+period = "jun_2021"
+income = 6000
+expenses = 4500
+comment = "null"
 insert_period(period, income, expenses, comment)
 
 
@@ -42,8 +46,5 @@ def get_period(period):
     item = response['Item']
     return item
 
-period = "jun_2021"
-income = 6000
-expenses = 4500
-comment = "null"
+
 
