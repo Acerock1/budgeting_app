@@ -22,6 +22,12 @@ years = [date.today().year, date.today().year-1, date.today().year-2]
 months = list(calendar.month_name[1:])
 "_ _ _"
 
+selected = option_menu(
+    menu_title=None,
+    options= ["Data Entry", "Data Visualiztion"],
+    icons=("📝", "📊"),
+    orientation= "horizontal"
+)
 
 #database interface
 def get_all_periods():
@@ -29,23 +35,10 @@ def get_all_periods():
     periods = [item["key"] for item in items]
     return periods
 
-#option_menu_at_top
-selected = option_menu(
-    menu_title=None,
-    options=["Data Entry", "Data Visualization"],
-    icons=["pencil-fill", "bar-chart-fill"],  # https://icons.getbootstrap.com/
-    orientation="horizontal",
-)
 st.title(page_title +" "+ page_icon)
 
 "_ _ _"
 
-selected = option_menu(
-    menu_title=None,
-    options= ["Data Entry", "Data Visualiztion"],
-    icons=("📝", "📊"),
-    orientation= "horizontal"
-)
 
 if selected == "Data entry":
     st.header(f"Data entry in {currency}")
