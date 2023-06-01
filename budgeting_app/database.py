@@ -11,10 +11,10 @@ def insert_period(period, income, expenses, comment):
     dynamodb.put_item(
         TableName = TableName,
         Item={
-            'period': {'S': period},
-            'income': {'N': income},
-            'expenses': {'N': expenses},
-            'comment': {'S': comment}
+            period: {period},
+            income: {income},
+            expenses: {expenses},
+            comment: {comment}
         }
     )
 
