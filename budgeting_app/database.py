@@ -39,4 +39,4 @@ def get_period(period):
     return item
 
 
-insert_period(period = "jun_2022", incomes = 6000, expenses = 4500, commment = "null")
+insert_period(period = "jun_2022", incomes = 6000, expenses = 4500, comment = "null")
