@@ -40,7 +40,7 @@ def get_all_periods():
 
 
 # Data entry column (option menu)
-if option_selected == "Data Entry":
+if option == "Data Entry":
     st.header(f"Data Entry in {currency}")
     with st.form("Enter Data", clear_on_submit=True):
         col1, col2 = st.columns(2)
@@ -68,7 +68,7 @@ if option_selected == "Data Entry":
 
 
 # Data visualization option menu
-if option_selected == "Data Visualization":
+if option == "Data Visualization":
     st.header("Data Visualization")
     with st.form("Saved Periods"):
         period = st.selectbox("Select Period:", get_all_periods())
