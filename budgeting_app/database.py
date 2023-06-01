@@ -6,17 +6,20 @@ dynamodb = boto3.client("dynamodb")
 TableName = "budgeting_app_db"
 
 
-#write to table
+
 def insert_period(period, income, expenses, comment):
-    dynamodb.put_item(
-        TableName = TableName,
+    response = dynamodb.put_item(
+        TableName=table_name,
         Item={
-            period: {period},
-            income: {income},
-            expenses: {expenses},
-            comment: {comment}
+            'period': {'S': period},
+            'income': {'N': income},
+            'expenses': {'N': expenses},
+            'comment': {'S': comment}
         }
     )
+    return response
+
+
 
 #fetchdata from table
 def fetch_all_periods():
