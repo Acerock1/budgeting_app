@@ -12,7 +12,7 @@ st.set_page_config(
     layout= "centered"
 )
 
-"_ _ _"
+#page config
 incomes = ["Salary", "Blog", "Other Income"]
 expenses = ["Rent", "Utilities", "Car", "Savings", "Other Expenses"]
 currency = "USD"
@@ -20,7 +20,10 @@ page_title = "Income and Expense Tracker"
 page_icon = "💵"
 years = [date.today().year, date.today().year-1, date.today().year-2]
 months = list(calendar.month_name[1:])
-"_ _ _"
+
+
+#page layout--- title, and option menu for data entry and data visualization
+st.title(page_title +" "+ page_icon)
 
 selected = option_menu(
     menu_title=None,
@@ -35,11 +38,7 @@ def get_all_periods():
     periods = [item["key"] for item in items]
     return periods
 
-st.title(page_title +" "+ page_icon)
-
-"_ _ _"
-
-
+#data entry column (option menu)
 if selected == "Data entry":
     st.header(f"Data entry in {currency}")
     with st.form("Enter data", clear_on_submit=True):
@@ -65,7 +64,8 @@ if selected == "Data entry":
                 db.insert_period(period, incomes, expenses, comment)
                 st.success("Data saved🔥")
 
-"_ _ _"
+
+#data visualization option menu
 if selected == "Data Visualisation":
     st.header("Data Visualization")
     with st.form("saved_periods"):
